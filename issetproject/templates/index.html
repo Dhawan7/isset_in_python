@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "font/css/all.min.css" %}">
+    <title>Mysite</title>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row  p-5">
+        <div class="col-md-6 bg-dark p-5">
+          <form method="post" class="mt-5 p-5">
+            {% csrf_token%}
+            <h2 class="text-center h2 text-light">Login Form</h2>
+            <div class="form-group text-white">
+                <label for="name" class="float-left">  Username</label>
+                <input type="text" name='un' class="form-control" placeholder="Username..." id="email" >
+            </div>
+            <div class="form-group text-white">
+              <label for="password" class="float-left">Password</label>
+                <input type="password" name='pwd' class="form-control"  placeholder="password..." id="pwd">
+            </div>
+            <div class="form-group">
+              <input  type="submit" class="btn btn-warning" name='login' value="Login"/>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 bg-danger">
+          <form method="post" class="mt-5">
+            {% csrf_token%}
+            <h2 class="text-center h2 text-light">Contact Us</h2>
+            <div class="form-group text-white">
+                <label for="name" class="float-left">  Your Name</label>
+                <input type="text" name='name' class="form-control" placeholder="Your Name..." id="email" >
+            </div>
+            <div class="form-group text-white">
+              <label for="email" class="float-left">Your Email</label>
+                <input type="email" name='email' class="form-control"  placeholder="Email..." id="pwd">
+            </div>
+            <div class="form-group text-white">
+              <label for="mesasge" class="float-left">Your Suggesstion</label>
+              <textarea name="message" rows="8" cols="80"></textarea>
+            </div>
+            <div class="form-group">
+              <input  type="submit" class="btn btn-info" name='contact' value="Send Feedback"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
